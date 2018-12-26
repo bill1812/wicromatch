@@ -1,0 +1,823 @@
+
+\micromatch>npm run test
+
+> micromatch@3.1.10 test \micromatch
+> mocha
+
+these tests use bash to test for bash parity. since bash does not work on most versions of windows, these tests are skipped on windows
+these tests use bash to test for bash parity. since bash does not work on most versions of windows, these tests are skipped on windows
+
+
+  .all()
+    √ should throw an error when value is not a string
+    √ should return true when all patterns match the given string
+    √ should return false when some patterns do not match
+    √ should arrayify a string value
+
+  .any()
+    errors
+      √ should throw an error when value is not a string
+    empty patterns
+      √ should correctly handle empty patterns
+    non-globs
+      √ should match literal paths
+    stars (single pattern)
+      √ should return true when one of the given patterns matches the string
+      √ should return false when the path does not match the pattern
+      √ should match a path segment for each single star
+      √ should regard non-exclusive double-stars as single stars
+      √ should return false when full file paths are not matched:
+    stars (multiple patterns)
+      √ should return true when any of the patterns match
+      √ should return false when none of the patterns match
+    file extensions
+      √ should match files that contain the given extension:
+      √ should not match files that do not contain the given extension:
+    dot files
+      √ should match dotfiles when a dot is explicitly defined in the pattern:
+      √ should match leading `./` when `**` is in the pattern
+      √ should not match dotfiles when a dot is not defined in the pattern:
+      √ should match dotfiles when `dot` is set:
+      √ should not match dotfiles when `dot` is not set:
+    qmarks
+      √ question marks should not match slashes:
+    dot-slash
+      √ should match paths with leading `./`:
+
+  .braceExpand()
+    √ should throw an error when arguments are invalid
+    √ should expand a brace pattern
+
+  .braces()
+    √ should throw an error when arguments are invalid
+    √ should create a regex source string from a brace pattern
+    √ should expand a brace pattern
+
+  .compile()
+    √ should throw an error when arguments are invalid
+    √ should return an AST for a glob
+
+  .contains()
+    errors
+      √ should throw an error arguments are invalid
+    patterns
+      √ should correctly deal with empty patterns
+      √ should return true when the path contains the pattern
+      √ should be true when a glob pattern partially matches the path
+      √ should return false when the path does not contain the pattern
+      √ should match files that contain the given extension:
+      √ should not match files that do not contain the given extension:
+      √ should match dotfiles when a dot is explicitly defined in the pattern:
+      √ should match dotfiles when `dot` or `dotfiles` is set:
+      √ should not match dotfiles when `dot` or `dotfiles` is not set:
+      √ should match file paths:
+      √ should return true when full file paths are matched:
+      √ should match path segments:
+      √ should return false when full file paths are not matched:
+      √ should match paths with leading `./`:
+    windows paths
+      √ should match with common glob patterns
+      √ should match files that contain the given extension:
+      √ should match dotfiles when `dot` or `dotfiles` is set:
+      √ should not match dotfiles when `dot` or `dotfiles` is not set:
+      √ should match file paths:
+      √ should return true when full file paths are matched:
+      √ should match path segments:
+      √ should return false when full file paths are not matched:
+      √ should match dotfiles when a dot is explicitly defined in the pattern:
+      √ should match paths with leading `./`:
+
+  .every()
+    √ should return true if every string matches
+    √ should return false when not all strings match
+    √ should arrayify a string value
+
+  .isMatch():
+    error handling:
+      √ should throw on bad args
+    matching:
+      √ should escape plus signs to match string literals
+      √ should not escape plus signs that follow brackets
+      √ should support stars following brackets
+      √ should not escape plus signs that follow parens
+      √ should support stars following parens
+      √ should not match slashes with single stars
+      √ should not match dots with stars by default
+      √ should correctly deal with empty globs
+      √ should match with non-glob patterns
+      √ should match file names
+      √ should match with common glob patterns
+      √ should exactly match leading slash
+      √ should match files with the given extension
+      √ should match wildcards
+      √ should match globstars
+      √ issue #23
+      √ issue #24
+      √ should match slashes
+      √ question marks should not match slashes
+      √ should not match dotfiles when `dot` or `dotfiles` are not set
+      √ should match dotfiles when `dot` or `dotfiles` is set
+      √ should match file paths
+      √ should match full file paths
+      √ should match paths with leading `./` when pattern has `./`
+      √ should match paths with leading `./`
+
+  micromatch
+    empty list
+      √ should return an empty array
+    options.nodupes
+      √ should return an array with duplicates
+    posix paths
+      √ should return an array of matches for a literal string
+      √ should return an array of matches for an array of literal strings
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support single globs (*)
+      √ should support globstars (**)
+      √ should support negation patterns
+      √ should support multiple patterns
+      √ should work with file extensions
+      √ should match literal brackets
+    windows paths
+      √ should return an array of matches for a literal string
+      √ should return an array of matches for an array of literal strings
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support single globs (*)
+      √ should support globstars (**)
+      √ should work with file extensions
+      √ should support negation patterns
+
+  .makeRe()
+    √ should throw an error when value is not a string
+    √ should create a regex for a glob pattern
+
+  .match()
+    errors
+      √ should throw an error when pattern is not a string
+    posix paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support negation patterns
+    windows paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support negation patterns
+
+  .matcher()
+    errors
+      √ should throw an error when arguments are invalid
+    posix paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support negation patterns
+    posix paths (array of patterns)
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support negation patterns
+    windows paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support negation patterns
+
+  .matchKeys()
+    error handling
+      √ should throw when the first argument is not an object
+    match object keys
+      √ should return a new object with only keys that match the given glob pattern
+      √ should return a new object with only keys that match a regex:
+
+  .not()
+    posix paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support globs (*)
+      √ should support globstars (**)
+      √ should support negation patterns
+    windows paths
+      √ should return an array of matches for a literal string
+      √ should support regex logical or
+      √ should support regex ranges
+      √ should support globs (*)
+      √ should support globstars (**)
+      √ should support negation patterns
+
+  .parse()
+    √ should throw an error when arguments are invalid
+    √ should return an AST for a glob
+
+  .some()
+    √ should return true if any matches are found
+    √ should return false if no matches are found
+    √ should arrayify a string value
+
+  bash options and features:
+    failglob:
+      √ should throw an error when no matches are found:
+    bash
+      √ should handle "regular globbing":
+      √ should match directories:
+      √ should use quoted characters as literals:
+      √ should work for quoted characters
+      √ should work for escaped characters
+      √ should work for escaped paths/dots:
+      √ Pattern from Larry Wall's Configure that caused bash to blow up:
+      √ should support character classes
+      √ should support basic wildmatch (brackets) features
+      √ should support extended slash-matching features
+      √ should match literal parens
+      √ should match escaped characters
+      √ should match brackets
+      √ should regard multiple consecutive stars as a single star
+      √ none of these should output anything:
+    wildmat
+      √ Basic wildmat features
+      √ should support recursion
+
+  bash.spec
+    dotglob:
+      √ "a/b/.x" should not match "**/.x/**"
+      √ ".x" should not match "**/.x/**"
+      √ ".x/" should match "**/.x/**"
+      √ ".x/a" should match "**/.x/**"
+      √ ".x/a/b" should match "**/.x/**"
+      √ ".x/.x" should not match "**/.x/**"
+      √ "a/.x" should not match "**/.x/**"
+      √ "a/b/.x/c" should match "**/.x/**"
+      √ "a/b/.x/c/d" should match "**/.x/**"
+      √ "a/b/.x/c/d/e" should match "**/.x/**"
+      √ "a/b/.x/" should match "**/.x/**"
+      √ "a/.x/b" should match "**/.x/**"
+      √ "a/.x/b/.x/c" should not match "**/.x/**"
+      √ ".bashrc" should not match "?bashrc"
+      √ ".bar.baz/" should match ".*.*"
+      √ ".bar.baz" should match ".*.*"
+    glob:
+      √ "a/b/.x" should not match "**/.x/**"
+      √ ".x" should not match "**/.x/**"
+      √ ".x/" should match "**/.x/**"
+      √ ".x/a" should match "**/.x/**"
+      √ ".x/a/b" should match "**/.x/**"
+      √ ".x/.x" should not match "**/.x/**"
+      √ "a/.x" should not match "**/.x/**"
+      √ "a/b/.x/c" should match "**/.x/**"
+      √ "a/b/.x/c/d" should match "**/.x/**"
+      √ "a/b/.x/c/d/e" should match "**/.x/**"
+      √ "a/b/.x/" should match "**/.x/**"
+      √ "a/.x/b" should match "**/.x/**"
+      √ "a/.x/b/.x/c" should not match "**/.x/**"
+      √ "a/c/b" should match "a/*/b"
+      √ "a/.d/b" should not match "a/*/b"
+      √ "a/./b" should not match "a/*/b"
+      √ "a/../b" should not match "a/*/b"
+      √ "ab" should match "ab**"
+      √ "abcdef" should match "ab**"
+      √ "abef" should match "ab**"
+      √ "abcfef" should match "ab**"
+      √ "ab" should not match "ab***ef"
+      √ "abcdef" should match "ab***ef"
+      √ "abef" should match "ab***ef"
+      √ "abcfef" should match "ab***ef"
+      √ ".bashrc" should not match "?bashrc"
+      √ "abbc" should not match "ab?bc"
+      √ "abc" should not match "ab?bc"
+      √ "a.a" should match "[a-d]*.[a-b]"
+      √ "a.b" should match "[a-d]*.[a-b]"
+      √ "c.a" should match "[a-d]*.[a-b]"
+      √ "a.a.a" should match "[a-d]*.[a-b]"
+      √ "a.a.a" should match "[a-d]*.[a-b]*.[a-b]"
+      √ "a.a" should match "*.[a-b]"
+      √ "a.b" should match "*.[a-b]"
+      √ "a.a.a" should match "*.[a-b]"
+      √ "c.a" should match "*.[a-b]"
+      √ "d.a.d" should not match "*.[a-b]"
+      √ "a.bb" should not match "*.[a-b]"
+      √ "a.ccc" should not match "*.[a-b]"
+      √ "c.ccc" should not match "*.[a-b]"
+      √ "a.a" should match "*.[a-b]*"
+      √ "a.b" should match "*.[a-b]*"
+      √ "a.a.a" should match "*.[a-b]*"
+      √ "c.a" should match "*.[a-b]*"
+      √ "d.a.d" should match "*.[a-b]*"
+      √ "d.a.d" should not match "*.[a-b]*.[a-b]*"
+      √ "d.a.d" should match "*.[a-d]*.[a-d]*"
+      √ "a.bb" should match "*.[a-b]*"
+      √ "a.ccc" should not match "*.[a-b]*"
+      √ "c.ccc" should not match "*.[a-b]*"
+      √ "a.a" should match "*[a-b].[a-b]*"
+      √ "a.b" should match "*[a-b].[a-b]*"
+      √ "a.a.a" should match "*[a-b].[a-b]*"
+      √ "c.a" should not match "*[a-b].[a-b]*"
+      √ "d.a.d" should not match "*[a-b].[a-b]*"
+      √ "a.bb" should match "*[a-b].[a-b]*"
+      √ "a.ccc" should not match "*[a-b].[a-b]*"
+      √ "c.ccc" should not match "*[a-b].[a-b]*"
+      √ "abd" should match "[a-y]*[^c]"
+      √ "abe" should match "[a-y]*[^c]"
+      √ "bb" should match "[a-y]*[^c]"
+      √ "bcd" should match "[a-y]*[^c]"
+      √ "ca" should match "[a-y]*[^c]"
+      √ "cb" should match "[a-y]*[^c]"
+      √ "dd" should match "[a-y]*[^c]"
+      √ "de" should match "[a-y]*[^c]"
+      √ "bdir/" should match "[a-y]*[^c]"
+      √ "abd" should match "**/*"
+    globstar:
+      √ "a.js" should match "**/*.js"
+      √ "a/a.js" should match "**/*.js"
+      √ "a/a/b.js" should match "**/*.js"
+      √ "a/b/z.js" should match "a/b/**/*.js"
+      √ "a/b/c/z.js" should match "a/b/**/*.js"
+      √ "foo.md" should match "**/*.md"
+      √ "foo/bar.md" should match "**/*.md"
+      √ "foo/bar" should match "foo/**/bar"
+      √ "foo/bar" should match "foo/**bar"
+      √ "ab/a/d" should match "**/*"
+      √ "ab/b" should match "**/*"
+      √ "a/b/c/d/a.js" should match "**/*"
+      √ "a/b/c.js" should match "**/*"
+      √ "a/b/c.txt" should match "**/*"
+      √ "a/b/.js/c.txt" should not match "**/*"
+      √ "a.js" should match "**/*"
+      √ "za.js" should match "**/*"
+      √ "ab" should match "**/*"
+      √ "a.b" should match "**/*"
+      √ "foo/" should match "foo/**/"
+      √ "foo/bar" should not match "foo/**/"
+      √ "foo/bazbar" should not match "foo/**/"
+      √ "foo/barbar" should not match "foo/**/"
+      √ "foo/bar/baz/qux" should not match "foo/**/"
+      √ "foo/bar/baz/qux/" should match "foo/**/"
+
+  braces - expanded
+    √ should handle extglobs in braces
+
+  braces - optimized
+    extglob characters
+      √ should expand braces (in extglobs) when preceded by an extglob character
+      √ should expand braces when preceded by an extglob character
+    array of patterns
+      √ should expand an array of patterns
+      √ should not uniquify by default
+      √ should uniquify when `options.nodupes` is true
+    sets
+      invalid sets
+        √ should handle invalid sets:
+      escaping
+        √ should not expand escaped braces
+        √ should handle spaces
+        √ should handle empty braces
+        √ should escape braces when only one value is defined
+        √ should not expand braces in sets with es6/bash-like variables
+        √ should not expand escaped commas.
+        √ should return sets with escaped commas
+        √ should not expand escaped braces.
+        √ should not expand escaped braces or commas.
+      set expansion
+        √ should support sequence brace operators
+        √ should expand multiple sets
+        √ should expand nested sets
+        √ should expand not modify non-brace characters
+      commas
+        √ should work with leading and trailing commas.
+      spaces
+        √ should handle spaces
+    ranges
+      escaping / invalid ranges
+        √ should not try to expand ranges with decimals
+        √ should escape invalid ranges:
+        √ weirdly-formed brace expansions -- fixed in post-bash-3.1
+        √ should not expand quoted strings.
+        √ should escaped outer braces in nested non-sets
+        √ should escape imbalanced braces
+      positive numeric ranges
+        √ should expand numeric ranges
+      negative ranges
+        √ should expand ranges with negative numbers
+      alphabetical ranges
+        √ should expand alphabetical ranges
+        √ should expand multiple ranges:
+      combo
+        √ should expand numerical ranges - positive and negative
+      large numbers
+        √ should expand large numbers
+      steps > positive ranges
+        √ should expand ranges using steps:
+        √ should expand positive ranges with negative steps:
+      steps > negative ranges
+        √ should expand negative ranges using steps:
+      steps > alphabetical ranges
+        √ should expand alpha ranges with steps
+        √ should expand alpha ranges with negative steps
+      padding
+        √ unwanted zero-padding -- fixed post-bash-4.0
+    integration
+      √ should work with dots in file paths
+      √ should expand a complex combination of ranges and sets:
+      √ should expand complex sets and ranges in `bash` mode:
+
+  brackets
+    main export
+      √ should create the equivalent regex character classes for POSIX expressions:
+    .match
+      √ should support POSIX.2 character classes
+      √ should match word characters
+      √ should match literal brackets
+      √ should match character classes
+      √ should match character class alphabetical ranges
+      √ should match character classes with leading dashes
+      √ should match character classes with trailing dashes
+      √ should match bracket literals
+      √ should match bracket literals
+      √ should negation patterns
+      √ should match negated dashes
+      √ should match negated brackets
+      √ should match alpha-numeric characters
+      √ should not create an invalid posix character class:
+      √ should return `true` when the pattern matches:
+      √ should return `false` when the pattern does not match:
+    .mm()
+      √ should return an array of matching strings:
+    POSIX: From the test suite for the POSIX.2 (BRE) pattern matching code:
+      √ First, test POSIX.2 character classes
+      √ should match using POSIX.2 negation patterns
+      √ should match word characters
+      √ should match digits with word class
+      √ should not digits
+      √ should not match word characters with digit class
+      √ should match uppercase alpha characters
+      √ should not match lowercase alpha characters
+      √ should not match digits with upper class
+      √ should match lowercase alpha characters
+      √ should not match uppercase alpha characters
+      √ should match one lower and one upper character
+      √ should match hexidecimal digits
+      √ should match punctuation characters (\-!"#$%&'()\*+,./:;<=>?@[\]^_`{|}~)
+      √ should only match one character
+      √ should only match one or more characters
+      √ invalid character class expressions are just characters to be matched
+      √ should match the start of a valid sh identifier
+      √ should match the first two characters of a valid sh identifier
+      √ how about A?
+      √ OK, what's a tab?  is it a blank? a space?
+      √ let's check out characters in the ASCII range
+      √ punctuation
+      √ graph
+
+  .capture()
+    √ should return null if no match
+    √ should return an empty array if there are no captures
+    √ should capture stars
+    √ should capture globstars
+    √ should capture extglobs
+    √ should capture paren groups
+    √ should capture star groups
+    √ should capture plus groups
+    √ should capture optional groups
+    √ should capture @ groups
+    √ should capture negated groups
+
+  dotfiles
+    file name matching
+      √ should not match a dot when the dot is not explicitly defined
+      √ should not match leading dots with question marks
+      √ should match with double dots
+      √ should not match a dot when the dot is not explicitly defined
+      √ should match a dot when the dot is explicitly defined
+    multiple directories
+      √ should not match a dot when the dot is not explicitly defined
+    options.dot
+      √ should match dotfiles when `options.dot` is true
+      √ should match dotfiles when `.dot` and `.matchBase` both defined
+      √ should work when the path has leading `./`
+      √ should not match dotfiles when `options.dot` is false
+      √ should not match dotfiles when `.dot` is false and `.matchBase` is true
+      √ should not match dotfiles when `.dot` is not defined and a dot is not in the glob pattern
+
+  extglobs
+    √ should match extglobs with wildcards (issue #100)
+    √ should match extglobs ending with statechar
+    √ should match extended globs:
+    √ should support negation
+    √ should match exactly one of the given pattern:
+    √ should work with globs
+    √ stuff from korn's book
+    √ tests derived from those in rosenblatt's korn shell book
+    √ tests derived from the pd-ksh test suite
+    √ simple kleene star tests
+    √ this doesn't work in bash either (per bash micromatch.tests notes)
+    √ should support multiple exclusion patterns in one extglob:
+    √ should correctly match empty parens
+    √ should match parens
+    √ should match escaped backslashes
+
+  bash
+    √ should match extended globs from the bash spec:
+    √ should support exclusions (49ms)
+    √ should support basic wildmatch features
+    √ Test recursion and the abort code
+    √ Test pathName option
+
+  globstars
+    √ should support globstars (**)
+    √ should support multiple globstars in one pattern
+    √ should match dotfiles
+    √ should match file extensions:
+/^(?:(?:(?!(?:\/|^)\.).)*?\/(?!\.)(?=.)[^\/]*?\/a\/)$/
+/^(?:(?:\.[\\\/](?=.))?(?:|(?:(?!(?:[\\\/]|^)\.).)*?[\\\/])[^\\\/]*?[\\\/]a[\\\/])$/
+[ 'a/a/', 'a/a/a/', 'a/a/a/a/', 'a/a/a/a/a/' ]
+    √ should respect trailing slashes on paterns
+    √ should match literal globstars when escaped
+
+  globstars
+    √ with char classes
+
+  issue-related tests
+    √ issue micromatch#108
+    √ issue #15
+    √ issue #23
+    √ issue #24
+    √ should only match nested directories when `**` is the only thing in a segment
+    √ issue #63
+    √ issue #83
+
+  handling of potential regex exploits
+    √ should support long escape sequences (88ms)
+    √ should throw an error when the pattern is too long
+
+  basic tests
+
+  http://www.bashcookbook.com/bashinfo/source/bash-1.14.7/tests/glob-test
+    √ 0: h
+    √ 1: a*
+    √ 2: X*
+
+  allow null glob expansion
+    √ 3: a
+    √ 4: X*
+
+  micromatch has same results as Bash. Minimatch does this differently
+    √ 5: m
+    √ 6: \*
+    √ 7: \**
+    √ 8: \*\*
+    √ 9: b*/
+    √ 10: c*
+    √ 11: **
+    √ 12: \.\./*/
+    √ 13: s/\..*//
+
+  legendary larry crashes bashes
+    √ 14: l
+    √ 15: /^root:/{s/^[^:]*:[^:]*:([^:]*).*$/\1/
+    √ 16: /^root:/{s/^[^:]*:[^:]*:([^:]*).*$/☺/
+
+  character classes
+    √ 17: c
+    √ 18: [a-c]b*
+    √ 19: [a-y]*[^c]
+    √ 20: a*[^c]
+    √ 21: undefined
+    √ 22: a[X-]b
+    √ 23: undefined
+    √ 24: [^a-c]*
+    √ 25: undefined
+
+  trailing slashes
+    √ 26: t
+    √ 27: a*b/*
+    √ 28: a*?/*
+    √ 29: a\*b/*
+    √ 30: a\*?/*
+    √ 31: *\\!*
+    √ 32: *\!*
+    √ 33: *.\*
+    √ 34: a[b]c
+    √ 35: a[\\b]c
+    √ 36: a?c
+    √ 37: a\*c
+    √ 38:
+
+  http://www.opensource.apple.com/source/bash/bash-23/bash/tests/glob-test
+    √ 39: h
+    √ 40: undefined
+    √ 41: */man*/bash.*
+    √ 42: man/man1/bash.1
+    √ 43: a***c
+    √ 44: a*****?c
+    √ 45: ?*****??
+    √ 46: *****??
+    √ 47: ?*****?c
+    √ 48: ?***?****c
+    √ 49: ?***?****?
+    √ 50: ?***?****
+    √ 51: *******c
+    √ 52: *******?
+    √ 53: a*cd**?**??k
+    √ 54: a**?**cd**?**??k
+    √ 55: a**?**cd**?**??k***
+    √ 56: a**?**cd**?**??***k
+    √ 57: a**?**cd**?**??***k**
+    √ 58: a****c**?**??*****
+    √ 59: [-abc]
+    √ 60: [abc-]
+    √ 61: [[]
+    √ 62: [
+    √ 63: [*
+
+  a right bracket shall lose its special meaning and represent itself in a bracket expression if it occurs first in the list.  -- POSIX.2 2.8.3.2
+    √ 64: a
+    √ 65: []]
+    √ 66: []-]
+    √ 67: [a-z]
+    √ 68: ??**********?****?
+    √ 69: ??**********?****c
+    √ 70: ?************c****?****
+    √ 71: *c*?**
+    √ 72: a*****c*?**
+    √ 73: a********???*******
+    √ 74: []
+    √ 75: [abc
+
+  nocase tests
+    √ 76: n
+    √ 77: XYZ
+    √ 78: ab*
+    √ 79: [ia]?[ck]
+
+  braces: onestar/twostar
+    √ 80: b
+    √ 81: {/*,*}
+    √ 82: {/?,*}
+
+  dots should not match unless requested
+    √ 83: d
+    √ 84: **
+    √ 85: undefined
+    √ 86: a/*/b
+    √ 87: a/*/b
+    √ 88: a/.*/b
+    √ 89: a/.*/b
+    √ 90: **
+    √ 91: *(a/b)
+    √ 92: *(a|{b),c)}
+    √ 93: [!a*
+    √ 94: undefined
+    √ 95: *(a|{b,c})
+    √ 96: {a,*(b|c,d)}
+    √ 97: {a,*(b|{c,d})}
+    √ 98: *(a|{b|c,c})
+    √ 99: *(a|{b|c,c})
+    √ 100: a?b
+    √ 101: a?b
+
+  negation tests
+    √ 102: n
+    √ 103: undefined
+    √ 104: !a*
+    √ 105: !a*
+    √ 106: a*
+    √ 107: !\!a*
+    √ 108: undefined
+
+  https://github.com/isaacs/minimatch/issues/5
+    √ 109: h
+    √ 110: undefined
+    √ 111: **/.x/**
+
+  https://github.com/isaacs/minimatch/issues/59
+    √ 112: h
+    √ 113: [z-a]
+    √ 114: a/[2015-03-10T00:23:08.647Z]/z
+    √ 115: [a-0][a-Ā]
+
+  minimatch parity:
+    backslashes
+      √ should match literal backslashes
+    minimatch issues (as of 12/7/2016)
+      √ https://github.com/isaacs/minimatch/issues/29
+      √ https://github.com/isaacs/minimatch/issues/30
+      √ https://github.com/isaacs/minimatch/issues/50
+      √ https://github.com/isaacs/minimatch/issues/67 (should work consistently with `makeRe` and matcher functions)
+      √ https://github.com/isaacs/minimatch/issues/75
+      √ https://github.com/isaacs/minimatch/issues/78
+      √ https://github.com/isaacs/minimatch/issues/82
+      √ https://github.com/isaacs/minimatch/issues/83
+
+  negation
+    √ should negate files with extensions:
+    √ should only treat leading exclamation as special
+    √ should support negated file names
+    √ should support negated globs ("*")
+    √ should support negated globstars ("**")
+    √ should negate dotfiles:
+    √ should negate files in the immediate directory:
+    √ should support any number of leading exclamations
+    √ should not give special meaning to non-leading exclamations
+    √ should negate files in any directory:
+
+  options
+    options.ignore
+      √ should filter out ignored patterns
+      √ should "un-ignore" values when a negation pattern is passed
+    options.expand
+      √ should expand braces to an array
+    options.matchBase
+      √ should match the basename of file paths when `options.matchBase` is true
+      √ should support `options.basename` as an alternative to `matchBase`
+      √ should work with negation patterns
+    options.flags
+      √ should be case-sensitive by default
+      √ should not be case-sensitive when `i` is set on `options.flags`
+    options.nobrace
+      √ should not expand braces when disabled
+    options.nocase
+      √ should not be case-sensitive when `options.nocase` is true
+      √ should not double-set `i` when both `nocase` and the `i` flag are set
+    options.noext
+      √ should match literal parens when noext is true (issue #116)
+      √ should not escape word characters in extglobs
+      √ should escape non-word characters in extglobs
+      √ should not match extglobs when noext is true
+    options.nodupes
+      √ should remove duplicate elements from the result array:
+      √ should not remove duplicates
+    options.unescape
+      √ should remove backslashes in glob patterns:
+    options.nonull
+      √ should return the pattern when no matches are found
+    options.nonegate
+      √ should support the `nonegate` option:
+    options.unixify
+      √ should unixify file paths by default
+      √ should unixify absolute paths
+      √ should strip leading `./`
+    options.dot
+      when `dot` or `dotfile` is NOT true:
+        √ should not match dotfiles by default:
+        √ should match dotfiles when a leading dot is defined in the path:
+        √ should use negation patterns on dotfiles:
+      when `dot` or `dotfile` is true:
+        √ should match dotfiles when there is a leading dot:
+        √ should match dotfiles when there is not a leading dot:
+        √ should use negation patterns on dotfiles:
+        √ should match dotfiles when `options.dot` is true:
+    windows
+      √ should unixify file paths
+      √ should unixify absolute paths
+    normalize
+      √ should normalize leading `./`
+      √ should match leading `./`
+
+  qmarks and stars
+    √ should support qmark matching
+    √ should correctly handle question marks in globs
+    √ should match one character per question mark
+    √ should match multiple groups of question marks
+    √ should use qmarks with other special characters
+    √ question marks should not match slashes
+    √ question marks should match arbitrary dots
+    √ question marks should not match leading dots
+    √ question marks should match leading dots when options.dot is true
+    √ question marks should match characters preceding a dot
+
+  ranges
+    √ should support valid regex ranges
+    √ should support valid regex ranges with glob negation patterns
+    √ should support valid regex ranges with negation patterns
+
+  special characters
+    regex
+      √ should match common regex characters
+    $ dollar signs
+      √ should treat dollar signs as literal:
+    ^ caret
+      √ should treat caret as literal:
+    slashes
+      √ should match forward slashes
+      √ should match backslashes
+    colons and drive letters
+      √ should treat common URL characters as literals
+    [ab] - brackets:
+      √ should support regex character classes:
+      √ should handle brackets
+      √ should handle unclosed brackets
+    (a|b) - logical OR:
+      √ should support regex logical OR:
+
+  stars
+    √ should match one directory level with a single star (*)
+    √ should match one or more characters
+    √ should match one or zero characters
+    √ should respect trailing slashes on paterns
+    √ should match a literal star when escaped
+    √ should match leading `./`
+
+
+  618 passing (5s)

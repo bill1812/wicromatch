@@ -1,0 +1,321 @@
+
+\micromatch>npm install
+npm WARN deprecated
+  gulp-util@3.0.8: gulp-util is deprecated - replace it,
+  following the guidelines at
+  https://medium.com/gulpjs/gulp-util-ca3b1f9f9ac5
+  
+npm WARN deprecated
+  graceful-fs@3.0.11:
+  please upgrade to graceful-fs 4
+  for compatibility with current and future versions of Node.js
+  
+npm WARN deprecated
+  minimatch@2.0.10:
+  Please update to minimatch 3.0.2
+  or higher to avoid a RegExp DoS issue
+  
+npm WARN deprecated
+  minimatch@0.2.14:
+  Please update to minimatch 3.0.2
+  or higher to avoid a RegExp DoS issue
+  
+npm WARN deprecated
+  graceful-fs@1.2.3:
+  please upgrade to graceful-fs 4
+  for compatibility with current and future versions of Node.js
+  
+npm notice created a lockfile as package-lock.json. You should commit this file.
+
+added 454 packages from 586 contributors and audited 2794 packages in 117.118s
+found 8 vulnerabilities (2 low, 1 moderate, 4 high, 1 critical)
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+***
+
+\micromatch>dependency-check ./package.json
+Success! All dependencies used in the code are listed in package.json
+
+***
+
+\micromatch>npm audit
+
+                       === npm audit security report ===
+
+# Run 1.[ npm install --save-dev gulp@4.0.0 ] to resolve 5 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+
+  High            Regular Expression Denial of Service
+
+  Package         minimatch
+
+  Dependency of   gulp [dev]
+
+  Path            gulp > vinyl-fs > glob-stream > glob > minimatch
+
+  More info       https://nodesecurity.io/advisories/118
+
+
+  High            Regular Expression Denial of Service
+
+  Package         minimatch
+
+  Dependency of   gulp [dev]
+
+  Path            gulp > vinyl-fs > glob-stream > minimatch
+
+  More info       https://nodesecurity.io/advisories/118
+
+
+  High            Regular Expression Denial of Service
+
+  Package         minimatch
+
+  Dependency of   gulp [dev]
+
+  Path            gulp > vinyl-fs > glob-watcher > gaze > globule > glob >
+                  minimatch
+
+  More info       https://nodesecurity.io/advisories/118
+
+
+  High            Regular Expression Denial of Service
+
+  Package         minimatch
+
+  Dependency of   gulp [dev]
+
+  Path            gulp > vinyl-fs > glob-watcher > gaze > globule > minimatch
+
+  More info       https://nodesecurity.io/advisories/118
+
+
+  Low             Prototype Pollution
+
+  Package         lodash
+
+  Dependency of   gulp [dev]
+
+  Path            gulp > vinyl-fs > glob-watcher > gaze > globule > lodash
+
+  More info       https://nodesecurity.io/advisories/577
+
+
+# Run 2.[ npm install --save-dev mocha@5.2.0 ] to resolve 2 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+
+  Low             Regular Expression Denial of Service
+
+  Package         debug
+
+  Dependency of   mocha [dev]
+
+  Path            mocha > debug
+
+  More info       https://nodesecurity.io/advisories/534
+
+
+  Critical        Command Injection
+
+  Package         growl
+
+  Dependency of   mocha [dev]
+
+  Path            mocha > growl
+
+  More info       https://nodesecurity.io/advisories/146
+
+
+# Run 3.[ npm install --save-dev gulp-format-md@2.0.0 ] to resolve 1 vulnerability
+SEMVER WARNING: Recommended action is a potentially breaking change
+
+  Moderate        Regular Expression Denial of Service
+
+  Package         underscore.string
+
+  Dependency of   gulp-format-md [dev]
+
+  Path            gulp-format-md > remarkable > argparse > underscore.string
+
+  More info       https://nodesecurity.io/advisories/745
+
+
+found 8 vulnerabilities (2 low, 1 moderate, 4 high, 1 critical) in 2794 scanned packages
+  8 vulnerabilities require semver-major dependency updates.
+
+***
+
+npm install --save-dev gulp@4.0.0
+npm install --save-dev mocha@5.2.0
+npm install --save-dev gulp-format-md@2.0.0
+
+***
+
+\micromatch>npm install --save-dev gulp@4.0.0 mocha@5.2.0 gulp-format-md@2.0.0
+
++ mocha@5.2.0
++ gulp@4.0.0
++ gulp-format-md@2.0.0
+
+added 126 packages from 85 contributors,
+ removed 92 packages,
+ updated 32 packages,
+ moved 1 package and audited 7730 packages in 81.262s
+
+found 1 moderate severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+***
+
+\micromatch>npm audit
+
+                       === npm audit security report ===
+
+
+                                 Manual Review
+             Some vulnerabilities require your attention to resolve
+
+          Visit https://go.npm.me/audit-guide for additional guidance
+
+
+  Moderate        Regular Expression Denial of Service
+
+  Package         underscore.string
+
+  Patched in      >=3.3.5
+
+  Dependency of   gulp-format-md [dev]
+
+  Path            gulp-format-md > remarkable > argparse > underscore.string
+
+  More info       https://nodesecurity.io/advisories/745
+
+found 1 moderate severity vulnerability in 7730 scanned packages
+  1 vulnerability requires manual review. See the full report for details.
+
+*** Disabled package-lock.json and reinstall *** 01:57 27-Dec-2018 ***
+
+\micromatch>npm install
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 477 packages from 1040 contributors and audited 7730 packages in 118.267s
+found 1 moderate severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
+
+*** test upgrade argparse package dependencies ***
+
+\micromatch\node_modules\argparse>npm-check -u
+? Choose which packages to update. underscore@1.9.1, underscore.string@3.3.5
+
+$ npm install --save underscore@1.9.1 underscore.string@3.3.5 --color=always
++ underscore.string@3.3.5
++ underscore@1.9.1
+added 4 packages from 12 contributors and audited 4 packages in 3.711s
+found 0 vulnerabilities
+
+npm notice created a lockfile as package-lock.json. You should commit this file.
+
+
+[npm-check] Update complete!
+[npm-check] underscore@1.9.1, underscore.string@3.3.5
+[npm-check] You should re-run your tests to make sure everything works with the updates.
+
+\micromatch\node_modules\argparse> TEST PASS <
+
+*** Regenerated package-lock.json *** see package.After.List.txt ***
+
+\micromatch>npm install --package-lock
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+audited 7732 packages in 18.951s
+found 0 vulnerabilities
+
+
+\micromatch>npm audit
+
+                       === npm audit security report ===
+
+found 0 vulnerabilities
+ in 7732 scanned packages
+
+*** Dependency Check ***
+
+\micromatch>dependency-check .\package.json
+Success! All dependencies used in the code are listed in package.json
+
+*** Renamed to wicromatch and npm install ***
+
+\wicromatch>npm install
+npm WARN rollback Rolling back needle@2.2.0 failed
+  (this is probably harmless): EPERM: operation not permitted,
+  rmdir '\wicromatch\node_modules\fsevents\node_modules'
+  
+npm WARN rollback Rolling back readable-stream@2.3.6 failed
+  (this is probably harmless): EPERM: operation not permitted,
+  rmdir '\wicromatch\node_modules\fsevents\node_modules'
+  
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.2.4 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.2.4:
+  wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 479 packages from 1042 contributors and audited 7732 packages in 100.173s
+found 0 vulnerabilities
+
+...
+
++-- gulp-format-md@2.0.0
+| +-- pretty-remarkable@1.0.0
+| | `-- markdown-utils@1.0.0
+| |   +-- is-number@7.0.0
+| |   `-- list-item@2.0.0
+| |     +-- fill-range@6.0.0
+| |     | +-- is-number@7.0.0 deduped
+| |     | `-- to-regex-range@4.0.2
+| |     |   `-- is-number@7.0.0 deduped
+| |     `-- is-number@7.0.0
+| +-- remarkable@1.7.1
+| | +-- argparse@0.1.16
+| | | +-- underscore@1.9.1 <[invalid]
+| | | `-- underscore.string@3.3.5 <[invalid]
+| | |   +-- sprintf-js@1.1.2 extraneous
+| | |   `-- util-deprecate@1.0.2 extraneous
+| | `-- autolinker@0.15.3
+| +-- sections@1.0.0
+
+...
+
+`-- to-regex@3.0.2
+  +-- define-property@2.0.2 deduped
+  +-- extend-shallow@3.0.2 deduped
+  +-- regex-not@1.0.2 deduped
+  `-- safe-regex@1.1.0 deduped
+
+npm ERR! missing: safe-buffer@5.1.1, required by readable-stream@2.3.6
+npm ERR! missing: safe-buffer@5.1.1, required by string_decoder@1.1.1
+npm ERR! missing: strip-ansi@3.0.1, required by gauge@2.7.4
+npm ERR! missing: strip-ansi@3.0.1, required by string-width@1.0.2
+npm ERR! missing: ansi-regex@2.1.1, required by strip-ansi@3.0.1
+npm ERR! missing: wrappy@1.0.2, required by inflight@1.0.6
+npm ERR! missing: wrappy@1.0.2, required by once@1.4.0
+npm ERR! missing: safe-buffer@5.1.1, required by tar@4.4.1
+npm ERR! missing: yallist@3.0.2, required by tar@4.4.1
+npm ERR! missing: safe-buffer@5.1.1, required by minipass@2.2.4
+npm ERR! missing: yallist@3.0.2, required by minipass@2.2.4
+npm ERR! invalid: underscore@1.9.1        \wicromatch\node_modules\argparse\node_modules\underscore
+npm ERR! invalid: underscore.string@3.3.5 \wicromatch\node_modules\argparse\node_modules\underscore.string
+npm ERR! extraneous: sprintf-js@1.1.2     \wicromatch\node_modules\argparse\node_modules\sprintf-js
+npm ERR! extraneous: util-deprecate@1.0.2 \wicromatch\node_modules\argparse\node_modules\util-deprecate
+...
+
+npm run test 
+  
+  ...
+  
+  618 passing (2s)
+
+
+\wicromatch>  It's work!  <
